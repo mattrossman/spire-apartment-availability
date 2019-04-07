@@ -1,5 +1,6 @@
 import yaml
-from spire import Session
+import spire
+import sys
 
 config = {}
 with open("config.yaml", 'r') as stream:
@@ -7,8 +8,8 @@ with open("config.yaml", 'r') as stream:
         config = yaml.safe_load(stream)
     except yaml.YAMLError as exc:
         print(exc)
-        exit(-1)
+        sys.exit(1)
 
-s = Session(config['user'], config['password'], config['spire-id'])
+s = spire.Session(config['user'], config['password'], config['spire_id'])
 results = s.search_area('SY', 'DB')
 
