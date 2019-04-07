@@ -2,4 +2,5 @@
 __*
 *.yaml
 *.html
+zappa_settings.json
 venv/
