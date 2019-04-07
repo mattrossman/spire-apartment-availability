@@ -74,13 +74,13 @@ class Session:
             doc (str): the response text from the search, expected in XML format.
 
         Returns:
-            list of dict: all of the rooms contained in the results table, keyed under 'building' and 'room' containing
-            the building name and full room number, respectively.
+            list of dict: all of the rooms contained in the results table, keyed under 'building' and 'number'
+            containing the building name and full room number, respectively.
 
         """
         soup = BeautifulSoup(doc, 'html.parser')
         entries = soup.find('table', class_='PSLEVEL1GRID').find_all('tr')[1:]  # first row is just headers
         # column 0 is the building name, column 1 is the full room number
-        results = [{'building': col[0].text, 'room': col[1].text} for col in [row.find_all('span') for row in entries]
+        results = [{'building': col[0].text, 'number': col[1].text} for col in [row.find_all('span') for row in entries]
                    if not col[0].text.isspace()]
         return results
