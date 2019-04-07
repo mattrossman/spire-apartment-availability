@@ -12,6 +12,7 @@ Create a file called `config.yaml` and fill in the blanks:
 
     user: <YOUR SPIRE USERNAME>
     password: <YOUR SPIRE PASSWORD>
+    spire-id: <YOUR SPIRE ID>
 
 Run the script.
 
