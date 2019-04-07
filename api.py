@@ -13,7 +13,7 @@ def search_area():
     query = request.args
     s = spire.Session(creds['user'], creds['password'], creds['spire_id'])
     result = s.search_area(query.get('area'), query.get('room_type'))
-    if 'hook' in creds:
+    if 'hook' in creds and result:
         return call_hook(result, creds['hook'])
     return jsonify(result)
 
