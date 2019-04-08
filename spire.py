@@ -32,7 +32,7 @@ class Session:
                 e.g. 'DB' for double, 'SG' for single.
 
         Returns:
-            list of dict: contains each room found, bundled with 'building' and 'room'
+            list of dict: contains each room found, bundled with 'building' and 'number'
 
         """
         # get search page to retrieve form ID and page state
